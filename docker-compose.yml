@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:8080"
+    environment:
+      VUE_APP_BACKEND_URL: "ws://localhost:8081" # Backend WebSocket URL
+    volumes:
+      - ./frontend:/app
+    command: npm run serve
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8081:8081"
+    environment:
+      - REDIS_URL=redis://redis:6379 # Optional: for session management
+    volumes:
+      - ./backend:/app
+    command: go run ./cmd/server/main.go
+
+  redis: # Optional: Redis for session handling
+    image: redis:alpine
+    ports:
+      - "6379:6379"
