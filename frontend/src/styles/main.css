@@ -1,0 +1,8 @@
+/* main.css */
+
+html,
+body {
+  height: 100%; /* Ensure it takes the full height */
+  margin: 0; /* Remove default margin */
+  background-color: #1e1e2f; /* Set your desired background color */
+}
