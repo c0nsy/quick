@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <LandingPage />
+    <router-view />
   </div>
 </template>
 
