@@ -40,7 +40,7 @@
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/quick-brainstorm.git
-   cd quick-brainstorm ```
+   cd quick-brainstorm 
 2. **Run with Docker:**
    ```bash
    docker-compose up --build
